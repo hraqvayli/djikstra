@@ -7,12 +7,10 @@ def dijkstra(village, source='s'):
     a_traiter = [(0, source)]
     while a_traiter:
         dist_noeud, noeud = a_traiter.pop()
-        print(noeud, dist_noeud)
         if not dejaTraite[noeud]:
             dejaTraite[noeud] = True
             for voisin in village[noeud].keys():
                 dist_voisin = dist_noeud + village[noeud][voisin]
-                print('++++++++++++++++', noeud, dist_voisin)
                 if dist_voisin > distance[voisin]:
                     distance[voisin] = dist_voisin
                     precedent[voisin] = noeud
